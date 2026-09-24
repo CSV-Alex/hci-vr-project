@@ -1,0 +1,13 @@
+// Root shell layout: the page background lives on `body`, this only stacks the
+// three sections with the section rhythm from the tokens.
+:host {
+  display: block;
+  background-color: var(--color-bg);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  padding-block: var(--section-gap);
+}

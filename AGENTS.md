@@ -31,14 +31,22 @@ Sections in order:
    - One image on the side or below.
 
 3. **Progress Log**
-   - Chronological blocks. Each block:
-     - A short heading (e.g., "Ideation", "Prototype", "User Testing", "Final Build").
-     - One or two images (screenshot, photo, or game image).
-     - Two to four lines of text describing what was done and what was learned.
-   - This is the core of the page. It can have as many blocks as needed.
-
-4. **Closing / Reflection**
-   - Short closing paragraph.
+   - Chronological blocks. Each block represents a milestone of the project.
+   - Each block can contain one or more of the following content types:
+     - **Text blocks:** short paragraphs describing the milestone, learnings, or conclusions.
+     - **Brainstorm / ideation notes:** a list of short bullet points or sticky-note-style cards (text only, no images required).
+     - **Storyboard panels:** one or more horizontal images displayed side by side, showing the narrative sequence of the project.
+     - **User testing photos:** vertical or landscape photos taken with a phone, showing users interacting with the VR prototype.
+     - **Game / VR screenshots:** landscape screenshots or images of the prototype.
+     - **User flow / diagram images:** images of flows, maps, or affinity diagrams.
+   - The layout must adapt to each content type: text blocks are full-width paragraphs, storyboard panels are shown in a horizontal row (with horizontal scroll on mobile), testing photos are shown in a vertical grid or side by side, and screenshots are shown full-width or in a two-column grid.
+   - Each image must have an `alt` attribute describing its content.
+   - Images come from `src/assets/images/`. Suggested subfolders:
+     - `src/assets/images/brainstorm/`
+     - `src/assets/images/storyboard/`
+     - `src/assets/images/testing/`
+     - `src/assets/images/game/`
+     - `src/assets/images/flows/`
 
 ## Visual Design Direction
 

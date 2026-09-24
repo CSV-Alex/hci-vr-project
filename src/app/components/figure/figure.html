@@ -1,0 +1,13 @@
+<figure class="figure">
+  <img
+    class="image"
+    [class.image--cover]="fit() === 'cover'"
+    [src]="src()"
+    [alt]="alt()"
+    loading="lazy"
+    decoding="async"
+  />
+  @if (caption()) {
+    <figcaption class="caption">{{ caption() }}</figcaption>
+  }
+</figure>

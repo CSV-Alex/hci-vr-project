@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+// =============================================================================
+// Global stylesheet entry.
+// Load order matters: tokens define the custom properties, mixins provide the
+// helpers, base consumes both for document-level defaults.
+// =============================================================================
+
+@use 'styles/tokens';
+@use 'styles/base';

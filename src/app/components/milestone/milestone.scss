@@ -1,0 +1,69 @@
+@use '../../../styles/mixins' as *;
+
+// Milestone = marker rail on the left, content on the right. The rail collapses
+// to a full-width stack on small screens.
+.milestone {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+
+  @include from('md') {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    column-gap: var(--space-5);
+  }
+}
+
+.head {
+  display: flex;
+  gap: var(--space-3);
+  align-items: baseline;
+
+  @include from('md') {
+    grid-column: 2;
+    display: block;
+  }
+}
+
+.marker {
+  flex: 0 0 auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  transform: translateY(-0.15rem);
+  background-color: var(--color-accent);
+  border-radius: 50%;
+
+  @include from('md') {
+    display: none;
+  }
+}
+
+.headings {
+  min-width: 0;
+}
+
+.label {
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  color: var(--color-text);
+}
+
+.blocks {
+  @include stack(var(--block-gap));
+
+  @include from('md') {
+    grid-column: 2;
+  }
+}

@@ -1,0 +1,19 @@
+<section class="overview" aria-labelledby="overview-heading">
+  <div class="inner">
+    <p class="eyebrow">01 · Contexto</p>
+    <h2 id="overview-heading" class="heading">{{ overview.heading }}</h2>
+    <div class="body">
+      <div class="copy">
+        @for (paragraph of overview.paragraphs; track $index) {
+          <p class="paragraph">{{ paragraph }}</p>
+        }
+      </div>
+
+      @if (overview.image; as image) {
+        <div class="media">
+          <app-figure [src]="image.src" [alt]="image.alt" [caption]="image.caption ?? ''" />
+        </div>
+      }
+    </div>
+  </div>
+</section>

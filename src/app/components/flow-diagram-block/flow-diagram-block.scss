@@ -1,0 +1,35 @@
+@use '../../../styles/mixins' as *;
+
+.flow {
+  @include stack(var(--space-4));
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-heading);
+  color: var(--color-text);
+}
+
+.diagrams {
+  @include plain-list;
+  @include stack(var(--space-5));
+}
+
+.diagram {
+  min-width: 0;
+}
+
+// Diagrams are wide and detailed: keep them contained and separated by a hairline.
+.diagram app-figure ::ng-deep .image {
+  width: 100%;
+  margin-inline: auto;
+  background-color: var(--color-bg-raised);
+}
+
+.diagram + .diagram {
+  padding-top: var(--space-5);
+  border-top: var(--border-width) solid var(--color-border);
+}

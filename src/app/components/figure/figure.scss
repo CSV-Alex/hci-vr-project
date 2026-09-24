@@ -1,0 +1,29 @@
+// Thin 1px frame instead of a card with shadow/radius — retro-terminal look.
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: var(--color-bg-raised);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  object-fit: contain;
+  transition: border-color var(--transition-fast);
+}
+
+.image--cover {
+  object-fit: cover;
+}
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  line-height: var(--lh-heading);
+  color: var(--color-text-muted);
+}

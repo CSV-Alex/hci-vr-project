@@ -1,0 +1,41 @@
+@use '../../../styles/mixins' as *;
+
+.testing {
+  @include stack(var(--space-4));
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-heading);
+  color: var(--color-text);
+}
+
+.photos {
+  @include plain-list;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--space-4);
+}
+
+// Portrait phone photos: allow more columns since each one is narrow.
+.photos--portrait {
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+
+  @include from('sm') {
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  }
+}
+
+.photo {
+  min-width: 0;
+
+  // Testing photos are the only place a fixed aspect ratio helps the grid read
+  // evenly, since phone shots arrive at mixed heights.
+  app-figure ::ng-deep .image--cover {
+    aspect-ratio: 3 / 4;
+    object-position: center;
+  }
+}

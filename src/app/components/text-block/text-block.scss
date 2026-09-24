@@ -1,0 +1,20 @@
+@use '../../../styles/mixins' as *;
+
+.text-block {
+  @include stack(var(--space-4));
+  @include measure;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-heading);
+  color: var(--color-text);
+}
+
+.paragraph {
+  margin: 0;
+  color: var(--color-text);
+}

@@ -1,0 +1,8 @@
+<div class="text-block">
+  @if (title()) {
+    <h4 class="title">{{ title() }}</h4>
+  }
+  @for (paragraph of paragraphs(); track $index) {
+    <p class="paragraph">{{ paragraph }}</p>
+  }
+</div>

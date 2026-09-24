@@ -1,0 +1,18 @@
+<section class="log" aria-labelledby="log-heading">
+  <div class="inner">
+    <p class="eyebrow">02 · Bitácora</p>
+    <h2 id="log-heading" class="heading">Registro de avance</h2>
+
+    @if (milestones.length) {
+      <ol class="milestones">
+        @for (milestone of milestones; track milestone.id) {
+          <li class="item">
+            <app-milestone [milestone]="milestone" />
+          </li>
+        }
+      </ol>
+    } @else {
+      <p class="empty">Todavía no hay hitos registrados.</p>
+    }
+  </div>
+</section>

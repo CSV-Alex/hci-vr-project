@@ -1,0 +1,46 @@
+@use '../../../styles/mixins' as *;
+
+.storyboard {
+  @include stack(var(--space-4));
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-heading);
+  color: var(--color-text);
+}
+
+// Horizontal row, scroll snap on touch, keyboard-focusable container.
+.panels {
+  @include plain-list;
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  padding-bottom: var(--space-3);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.panel {
+  position: relative;
+  flex: 0 0 auto;
+  width: 17rem;
+  scroll-snap-align: start;
+
+  @include from('md') {
+    width: 20rem;
+  }
+}
+
+.panel-index {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  color: var(--color-accent);
+}

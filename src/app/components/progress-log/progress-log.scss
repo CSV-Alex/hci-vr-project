@@ -1,0 +1,36 @@
+@use '../../../styles/mixins' as *;
+
+.log {
+  @include container;
+}
+
+.eyebrow {
+  @include label;
+  margin: 0 0 var(--space-2);
+}
+
+.heading {
+  margin: 0 0 var(--space-6);
+  padding-bottom: var(--space-3);
+  font-size: var(--fs-h2);
+  color: var(--color-accent);
+  border-bottom: var(--border-width) solid var(--color-border-accent);
+}
+
+.milestones {
+  @include plain-list;
+  @include stack(var(--space-7));
+}
+
+// Each milestone separated by a hairline, except the first.
+.item + .item {
+  padding-top: var(--space-7);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.empty {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,44 @@
+<article class="milestone">
+  <header class="head">
+    <span class="marker" aria-hidden="true"></span>
+    <div class="headings">
+      <p class="label">{{ milestone().label }}</p>
+      <h3 class="title">{{ milestone().title }}</h3>
+    </div>
+  </header>
+
+  @if (milestone().blocks.length) {
+    <div class="blocks">
+      @for (block of milestone().blocks; track $index) {
+        @switch (block.type) {
+          @case ('text') {
+            <app-text-block [title]="block.title ?? ''" [paragraphs]="block.paragraphs" />
+          }
+          @case ('brainstorm') {
+            <app-brainstorm-block [title]="block.title ?? ''" [notes]="block.notes" />
+          }
+          @case ('storyboard') {
+            <app-storyboard-block [title]="block.title ?? ''" [panels]="block.panels" />
+          }
+          @case ('testing') {
+            <app-testing-photos-block
+              [title]="block.title ?? ''"
+              [orientation]="block.orientation"
+              [photos]="block.photos"
+            />
+          }
+          @case ('screenshots') {
+            <app-screenshot-block
+              [title]="block.title ?? ''"
+              [columns]="block.columns"
+              [shots]="block.shots"
+            />
+          }
+          @case ('flow') {
+            <app-flow-diagram-block [title]="block.title ?? ''" [diagrams]="block.diagrams" />
+          }
+        }
+      }
+    </div>
+  }
+</article>
