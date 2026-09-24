@@ -1,0 +1,38 @@
+@use '../../../styles/mixins' as *;
+
+.footer {
+  @include container;
+}
+
+// Plain credits: a hairline on top and the names in mono, no links.
+.inner {
+  padding-top: var(--space-6);
+  border-top: var(--border-width) solid var(--color-border-accent);
+}
+
+.heading {
+  @include label;
+  margin: 0 0 var(--space-4);
+}
+
+.members {
+  @include plain-list;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2) var(--space-5);
+
+  @include from('sm') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include from('lg') {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.member {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  line-height: var(--lh-heading);
+  color: var(--color-text);
+}

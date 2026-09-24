@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ng-serve",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start", "--", "--port", "4201"],
+      "port": 4201
+    },
+    {
+      "name": "dist-static",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "4300", "-d", "dist/hci-vr-project/browser"],
+      "port": 4300
+    }
+  ]
+}

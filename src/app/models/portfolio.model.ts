@@ -24,11 +24,18 @@ export interface TextBlock {
   readonly paragraphs: readonly string[];
 }
 
-/** Ideation notes: short bullet points rendered as sticky-note-style cards. */
+/** One ideation board section: a subtitle, a short description and its capture. */
+export interface BrainstormSection {
+  readonly title: string;
+  readonly description: string;
+  readonly image: ImageItem;
+}
+
+/** Ideation board: one mini-section per board area (e.g. each Miro frame). */
 export interface BrainstormBlock {
   readonly type: 'brainstorm';
   readonly title?: string;
-  readonly notes: readonly string[];
+  readonly sections: readonly BrainstormSection[];
 }
 
 /** Storyboard panels: horizontal images in a single scrollable row. */
@@ -38,13 +45,26 @@ export interface StoryboardBlock {
   readonly panels: readonly ImageItem[];
 }
 
+/**
+ * One user testing session. Without `src` a "photo pending" frame is shown;
+ * with a non-empty `videoUrl` the whole card links to the session video.
+ */
+export interface TestingItem {
+  readonly src?: string;
+  /** Required: describes the photo (or the pending slot) for screen readers. */
+  readonly alt: string;
+  readonly caption?: string;
+  /** Link to the session video (e.g. Google Drive). Empty → not clickable. */
+  readonly videoUrl: string;
+}
+
 /** User testing photos: grid layout, portrait or landscape source images. */
 export interface TestingPhotosBlock {
   readonly type: 'testing';
   readonly title?: string;
   /** `portrait` → tighter multi-column grid, `landscape` → two side by side. */
   readonly orientation: 'portrait' | 'landscape';
-  readonly photos: readonly ImageItem[];
+  readonly photos: readonly TestingItem[];
 }
 
 /** Game / VR screenshots: full-width single image or a two-column grid. */
@@ -56,21 +76,13 @@ export interface ScreenshotBlock {
   readonly shots: readonly ImageItem[];
 }
 
-/** User flow, map or affinity diagram images. */
-export interface FlowDiagramBlock {
-  readonly type: 'flow';
-  readonly title?: string;
-  readonly diagrams: readonly ImageItem[];
-}
-
 /** Any content block a milestone can contain. */
 export type ContentBlock =
   | TextBlock
   | BrainstormBlock
   | StoryboardBlock
   | TestingPhotosBlock
-  | ScreenshotBlock
-  | FlowDiagramBlock;
+  | ScreenshotBlock;
 
 /** One chronological milestone entry in the progress log. */
 export interface Milestone {
@@ -96,4 +108,10 @@ export interface OverviewContent {
   readonly heading: string;
   readonly paragraphs: readonly string[];
   readonly image?: ImageItem;
+}
+
+/** Footer copy: the team members credited at the end of the page. */
+export interface FooterContent {
+  readonly heading: string;
+  readonly members: readonly string[];
 }

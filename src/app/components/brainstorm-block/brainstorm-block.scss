@@ -13,22 +13,58 @@
   color: var(--color-text);
 }
 
-// Auto-fit grid: cards reflow from 1 column on phones to 3+ on desktop.
-.notes {
+.sections {
   @include plain-list;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: var(--space-4);
+  @include stack(var(--space-6));
 }
 
-// Sticky-note feel via accent left rule + raised background, not shadows.
-.note {
-  padding: var(--space-4);
-  background-color: var(--color-bg-raised);
-  border: var(--border-width) solid var(--color-border);
+// Each board section separated by a hairline, except the first.
+.section + .section {
+  padding-top: var(--space-6);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+// Text over image on mobile; text beside image from medium screens up.
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+
+  @include from('md') {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: var(--space-6);
+    align-items: start;
+  }
+}
+
+.copy {
+  @include stack(var(--space-2));
+  min-width: 0;
+  padding-left: var(--space-4);
   border-left: 2px solid var(--color-accent-dim);
-  border-radius: var(--radius);
+}
+
+.section-index {
+  @include label;
+  margin: 0;
+}
+
+.section-title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
   color: var(--color-text);
+}
+
+.description {
+  margin: 0;
   font-size: var(--fs-small);
   line-height: var(--lh-body);
+  color: var(--color-text);
+}
+
+.media {
+  min-width: 0;
 }

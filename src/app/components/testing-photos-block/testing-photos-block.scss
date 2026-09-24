@@ -18,11 +18,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   gap: var(--space-4);
+  --photo-ratio: 4 / 3;
 }
 
 // Portrait phone photos: allow more columns since each one is narrow.
 .photos--portrait {
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  --photo-ratio: 3 / 4;
 
   @include from('sm') {
     grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
@@ -35,7 +37,78 @@
   // Testing photos are the only place a fixed aspect ratio helps the grid read
   // evenly, since phone shots arrive at mixed heights.
   app-figure ::ng-deep .image--cover {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: var(--photo-ratio);
     object-position: center;
   }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: inherit;
+  text-decoration: none;
+}
+
+// Linked cards: the frame lights up in the accent colour on hover/focus.
+.card--link:hover,
+.card--link:focus-visible {
+  .pending-frame,
+  app-figure ::ng-deep .image {
+    border-color: var(--color-accent-dim);
+  }
+
+  .cta {
+    color: var(--color-accent);
+  }
+}
+
+.cta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+
+  &::after {
+    content: ' →';
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+// Pending slot: dashed hairline frame, same ratio as the real photos.
+.pending {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.pending-frame {
+  display: grid;
+  place-items: center;
+  aspect-ratio: var(--photo-ratio);
+  background-color: var(--color-bg-raised);
+  border: var(--border-width) dashed var(--color-border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition-fast);
+}
+
+.pending-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  line-height: var(--lh-heading);
+  color: var(--color-text-muted);
 }

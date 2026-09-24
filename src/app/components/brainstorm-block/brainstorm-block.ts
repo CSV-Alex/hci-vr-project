@@ -1,12 +1,15 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
+import { BrainstormSection } from '../../models/portfolio.model';
+import { FigureComponent } from '../figure/figure';
+
 /**
- * Ideation notes rendered as sticky-note-style cards.
- *
- * Text only by design — no images, no shadows, square corners.
+ * Ideation board: one mini-section per board area, each with a subtitle, a
+ * short description and the capture of that area.
  */
 @Component({
   selector: 'app-brainstorm-block',
+  imports: [FigureComponent],
   templateUrl: './brainstorm-block.html',
   styleUrl: './brainstorm-block.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -14,5 +17,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export class BrainstormBlockComponent {
   readonly title = input<string>();
 
-  readonly notes = input.required<readonly string[]>();
+  readonly sections = input.required<readonly BrainstormSection[]>();
 }

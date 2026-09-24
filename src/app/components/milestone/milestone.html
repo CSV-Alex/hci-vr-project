@@ -15,7 +15,7 @@
             <app-text-block [title]="block.title ?? ''" [paragraphs]="block.paragraphs" />
           }
           @case ('brainstorm') {
-            <app-brainstorm-block [title]="block.title ?? ''" [notes]="block.notes" />
+            <app-brainstorm-block [title]="block.title ?? ''" [sections]="block.sections" />
           }
           @case ('storyboard') {
             <app-storyboard-block [title]="block.title ?? ''" [panels]="block.panels" />
@@ -33,9 +33,6 @@
               [columns]="block.columns"
               [shots]="block.shots"
             />
-          }
-          @case ('flow') {
-            <app-flow-diagram-block [title]="block.title ?? ''" [diagrams]="block.diagrams" />
           }
         }
       }

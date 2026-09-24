@@ -3,15 +3,34 @@
     <h4 class="title">{{ title() }}</h4>
   }
   <ul class="photos" [class.photos--portrait]="orientation() === 'portrait'">
-    @for (photo of photos(); track photo.src) {
+    @for (photo of photos(); track $index) {
       <li class="photo">
-        <app-figure
-          [src]="photo.src"
-          [alt]="photo.alt"
-          [caption]="photo.caption ?? ''"
-          fit="cover"
-        />
+        @if (photo.videoUrl) {
+          <a class="card card--link" [href]="photo.videoUrl" target="_blank" rel="noopener noreferrer">
+            <ng-container [ngTemplateOutlet]="media" [ngTemplateOutletContext]="{ $implicit: photo }" />
+            <span class="cta">Ver video <span class="visually-hidden">(se abre en una pestaña nueva)</span></span>
+          </a>
+        } @else {
+          <div class="card">
+            <ng-container [ngTemplateOutlet]="media" [ngTemplateOutletContext]="{ $implicit: photo }" />
+          </div>
+        }
       </li>
     }
   </ul>
 </div>
+
+<ng-template #media let-photo>
+  @if (photo.src) {
+    <app-figure [src]="photo.src" [alt]="photo.alt" [caption]="photo.caption ?? ''" fit="cover" />
+  } @else {
+    <figure class="pending">
+      <div class="pending-frame" role="img" [attr.aria-label]="photo.alt">
+        <span class="pending-label" aria-hidden="true">Foto pendiente</span>
+      </div>
+      @if (photo.caption) {
+        <figcaption class="caption">{{ photo.caption }}</figcaption>
+      }
+    </figure>
+  }
+</ng-template>

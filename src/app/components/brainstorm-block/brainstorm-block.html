@@ -2,9 +2,18 @@
   @if (title()) {
     <h4 class="title">{{ title() }}</h4>
   }
-  <ul class="notes">
-    @for (note of notes(); track $index) {
-      <li class="note">{{ note }}</li>
+  <ol class="sections">
+    @for (section of sections(); track section.image.src; let index = $index) {
+      <li class="section">
+        <div class="copy">
+          <p class="section-index">{{ index + 1 }}</p>
+          <h5 class="section-title">{{ section.title }}</h5>
+          <p class="description">{{ section.description }}</p>
+        </div>
+        <div class="media">
+          <app-figure [src]="section.image.src" [alt]="section.image.alt" [caption]="section.image.caption ?? ''" />
+        </div>
+      </li>
     }
-  </ul>
+  </ol>
 </div>

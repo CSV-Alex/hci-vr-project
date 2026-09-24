@@ -1,0 +1,10 @@
+<footer class="footer" aria-labelledby="footer-heading">
+  <div class="inner">
+    <h2 id="footer-heading" class="heading">{{ footer.heading }}</h2>
+    <ul class="members">
+      @for (member of footer.members; track member) {
+        <li class="member">{{ member }}</li>
+      }
+    </ul>
+  </div>
+</footer>
