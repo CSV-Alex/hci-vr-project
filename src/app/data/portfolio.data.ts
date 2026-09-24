@@ -26,7 +26,7 @@ import { HeroContent, Milestone, OverviewContent } from '../models/portfolio.mod
 export const HERO: HeroContent = {
   title: 'Grupo F — Cuidado al Volante',
   // TODO(content): confirm the exact semester / university wording.
-  subtitle: '[PLACEHOLDER — curso de Interacción Humano-Computadora · semestre · universidad]',
+  subtitle: '[Curso de Interacción Humano-Computadora · 7mo semestre · UNSA]',
   // Optional: uncomment and point at your hero image.
   // image: {
   //   src: 'assets/images/game/hero.png',
@@ -37,7 +37,7 @@ export const HERO: HeroContent = {
 /** Project overview copy: 3–5 lines of context. */
 export const OVERVIEW: OverviewContent = {
   heading: 'Resumen del proyecto',
-  paragraphs: ['[PLACEHOLDER — replace with your 3–5 line project overview]'],
+  paragraphs: ['[PLACEHOLDER]'],
   // Optional: uncomment and point at your overview image.
   // image: {
   //   src: 'assets/images/flows/overview.png',
