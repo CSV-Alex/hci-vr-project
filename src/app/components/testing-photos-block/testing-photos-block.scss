@@ -17,15 +17,11 @@
   @include plain-list;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-4);
+  gap: var(--space-5);
   --photo-ratio: 4 / 3;
 
   @include from('sm') {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include from('md') {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -62,7 +58,6 @@
   aspect-ratio: 4 / 3;
   background-color: var(--color-bg-raised);
   border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius);
   overflow: hidden;
   transition: border-color var(--transition-fast);
 
