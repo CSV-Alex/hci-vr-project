@@ -1,16 +1,16 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { TestingItem } from '../../models/portfolio.model';
 import { FigureComponent } from '../figure/figure';
 
 /**
- * User testing photos shot on a phone.
+ * User testing photos and video sessions.
  *
- * The source orientation drives the grid: portrait photos pack into a tighter
- * multi-column grid, landscape photos sit two per row. Items without a photo
- * render a "pending" frame, and items with a `videoUrl` link to the session
- * video in a new tab.
+ * Items with an `embedUrl` render a responsive inline video player (e.g. Google
+ * Drive preview), items with a `videoUrl` link to the session video, and items
+ * with only photos render phone shots or a pending frame.
  */
 @Component({
   selector: 'app-testing-photos-block',
@@ -20,9 +20,15 @@ import { FigureComponent } from '../figure/figure';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestingPhotosBlockComponent {
+  private readonly sanitizer = inject(DomSanitizer);
+
   readonly title = input<string>();
 
   readonly orientation = input.required<'portrait' | 'landscape'>();
 
   readonly photos = input.required<readonly TestingItem[]>();
+
+  getSafeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 }
