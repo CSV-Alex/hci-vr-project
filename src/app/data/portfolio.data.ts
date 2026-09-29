@@ -256,30 +256,49 @@ export const MILESTONES: readonly Milestone[] = [
       {
         type: 'text',
         paragraphs: [
-          'Probamos el prototipo con usuarios que jugaron con el visor puesto. Cada recuadro corresponde a una sesión de prueba y enlaza al video grabado durante esa sesión.',
+          'Probamos el prototipo con usuarios que jugaron con el visor puesto. Cada recuadro corresponde a una sesión de prueba con su respectiva grabación en video.',
         ],
       },
       {
         type: 'testing',
         title: 'Sesiones de prueba',
         orientation: 'landscape',
-        // TODO(content): add each photo as `src: 'assets/images/testing/<file>'`
-        // and paste the Google Drive link of each session into `videoUrl`.
         photos: [
           {
-            alt: 'Espacio reservado para la foto de la sesión de prueba 1.',
+            alt: 'Grabación en video de la sesión de prueba 1.',
             caption: 'Sesión 1',
-            videoUrl: '',
+            embedUrl: 'https://drive.google.com/file/d/1a-HAL8yGAkSQ3tXU0OU2c02wSz7SPKDe/preview',
+            videoUrl: 'https://drive.google.com/file/d/1a-HAL8yGAkSQ3tXU0OU2c02wSz7SPKDe/view',
           },
           {
-            alt: 'Espacio reservado para la foto de la sesión de prueba 2.',
+            alt: 'Grabación en video de la sesión de prueba 2.',
             caption: 'Sesión 2',
-            videoUrl: '',
+            embedUrl: 'https://drive.google.com/file/d/1rTdsOErWjQj--rsYAFmdUMGBpg-Zg3HR/preview',
+            videoUrl: 'https://drive.google.com/file/d/1rTdsOErWjQj--rsYAFmdUMGBpg-Zg3HR/view',
           },
           {
-            alt: 'Espacio reservado para la foto de la sesión de prueba 3.',
+            alt: 'Grabación en video de la sesión de prueba 3.',
             caption: 'Sesión 3',
-            videoUrl: '',
+            embedUrl: 'https://drive.google.com/file/d/16QmXAD5tlhMKXCyRD6qPsekUyeb3y8Gv/preview',
+            videoUrl: 'https://drive.google.com/file/d/16QmXAD5tlhMKXCyRD6qPsekUyeb3y8Gv/view',
+          },
+          {
+            alt: 'Grabación en video de la sesión de prueba 4.',
+            caption: 'Sesión 4',
+            embedUrl: 'https://drive.google.com/file/d/1t37omNvuxoVxiCZUl-CxO-qcIz3Pvwl5/preview',
+            videoUrl: 'https://drive.google.com/file/d/1t37omNvuxoVxiCZUl-CxO-qcIz3Pvwl5/view',
+          },
+          {
+            alt: 'Grabación en video de la sesión de prueba 5.',
+            caption: 'Sesión 5',
+            embedUrl: 'https://drive.google.com/file/d/1A3MgDFfWxdQzJVQ-_Dqk5phOQIyDTmMU/preview',
+            videoUrl: 'https://drive.google.com/file/d/1A3MgDFfWxdQzJVQ-_Dqk5phOQIyDTmMU/view',
+          },
+          {
+            alt: 'Grabación en video de la sesión de prueba 6.',
+            caption: 'Sesión 6',
+            embedUrl: 'https://drive.google.com/file/d/1Gc9kuKxUVolm1iIpfLmkXjotV3Lw_Os5/preview',
+            videoUrl: 'https://drive.google.com/file/d/1Gc9kuKxUVolm1iIpfLmkXjotV3Lw_Os5/view',
           },
         ],
       },

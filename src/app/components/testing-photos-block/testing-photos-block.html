@@ -5,7 +5,22 @@
   <ul class="photos" [class.photos--portrait]="orientation() === 'portrait'">
     @for (photo of photos(); track $index) {
       <li class="photo">
-        @if (photo.videoUrl) {
+        @if (photo.embedUrl) {
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe
+                [src]="getSafeUrl(photo.embedUrl)"
+                [title]="photo.caption || photo.alt"
+                allow="autoplay; encrypted-media; fullscreen"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+            @if (photo.caption) {
+              <p class="caption">{{ photo.caption }}</p>
+            }
+          </div>
+        } @else if (photo.videoUrl) {
           <a class="card card--link" [href]="photo.videoUrl" target="_blank" rel="noopener noreferrer">
             <ng-container [ngTemplateOutlet]="media" [ngTemplateOutletContext]="{ $implicit: photo }" />
             <span class="cta">Ver video <span class="visually-hidden">(se abre en una pestaña nueva)</span></span>

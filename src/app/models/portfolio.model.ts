@@ -55,7 +55,9 @@ export interface TestingItem {
   readonly alt: string;
   readonly caption?: string;
   /** Link to the session video (e.g. Google Drive). Empty → not clickable. */
-  readonly videoUrl: string;
+  readonly videoUrl?: string;
+  /** Embed URL for the inline video player (e.g. Google Drive preview). */
+  readonly embedUrl?: string;
 }
 
 /** User testing photos: grid layout, portrait or landscape source images. */
