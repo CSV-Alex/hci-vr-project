@@ -12,6 +12,9 @@
         </div>
         <div class="media">
           <app-figure [src]="section.image.src" [alt]="section.image.alt" [caption]="section.image.caption ?? ''" />
+          <a class="open-image" [href]="section.image.src" target="_blank" rel="noopener noreferrer">
+            Ver imagen completa: {{ section.title }}
+          </a>
         </div>
       </li>
     }

@@ -18,10 +18,17 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-5);
-  --photo-ratio: 4 / 3;
+  --photo-ratio: 16 / 9;
 
   @include from('sm') {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Display all three existing testing photos on one row when there is room.
+.photos:has(app-figure) {
+  @include from('lg') {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -37,13 +44,6 @@
 
 .photo {
   min-width: 0;
-
-  // Testing photos are the only place a fixed aspect ratio helps the grid read
-  // evenly, since phone shots arrive at mixed heights.
-  app-figure ::ng-deep .image--cover {
-    aspect-ratio: var(--photo-ratio);
-    object-position: center;
-  }
 }
 
 .video-card {
@@ -55,7 +55,7 @@
 .video-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   background-color: var(--color-bg-raised);
   border: var(--border-width) solid var(--color-border);
   overflow: hidden;
@@ -93,6 +93,19 @@
   }
 
   .cta {
+    color: var(--color-accent);
+  }
+}
+
+.video-link {
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  text-underline-offset: var(--space-1);
+
+  &:hover,
+  &:focus-visible {
     color: var(--color-accent);
   }
 }

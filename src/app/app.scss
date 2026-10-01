@@ -1,5 +1,4 @@
-// Root shell layout: the page background lives on `body`, this only stacks the
-// sections with the section rhythm from the tokens, then the team credits.
+// Root shell layout: the page background lives on `body`; this stacks sections.
 :host {
   display: block;
   background-color: var(--color-bg);
@@ -10,9 +9,4 @@
   flex-direction: column;
   gap: var(--section-gap);
   padding-block: var(--section-gap);
-}
-
-.site-footer {
-  display: block;
-  padding-bottom: var(--section-gap);
 }

@@ -1,59 +1,24 @@
-# HciVrProject
+# Grupo F — Cuidado al Volante
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
+Portafolio académico de una sola página para documentar la ideación, los bocetos, el prototipo y las pruebas de Cuydado al Volante.
 
-## Development server
+## Probar la página localmente
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+El proyecto se comprobó con Node.js v24.20.0 y npm. No requiere Roblox Studio para mostrar el portafolio ni instalar dependencias adicionales a las declaradas en `package-lock.json`.
 
 ```bash
-ng generate component component-name
+npm ci
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Abrir `http://localhost:4200/`. Para verificar la compilación de producción:
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+Las imágenes se leen de `src/assets/images/` y el contenido de `src/app/data/portfolio.data.ts`. Los videos de pruebas están enlazados desde Google Drive y requieren acceso a esos archivos y conexión a internet. El archivo del juego de Roblox Studio no forma parte de este repositorio; la página presenta su evidencia visual y el análisis de los scripts revisados mediante MCP.
 
-To build the project run:
+## Estructura
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+La página muestra el contexto del proyecto y, en orden, ideación, storytelling y storyboard, prototipo con análisis de interacción y usabilidad, y evaluación con fotografías y videos. Los textos de ideación describen propuestas; los de prototipo se refieren a las mecánicas verificadas en el juego.

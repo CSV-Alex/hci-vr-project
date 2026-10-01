@@ -19,6 +19,11 @@
             @if (photo.caption) {
               <p class="caption">{{ photo.caption }}</p>
             }
+            @if (photo.videoUrl) {
+              <a class="video-link" [href]="photo.videoUrl" target="_blank" rel="noopener noreferrer">
+                Abrir video en Google Drive <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+              </a>
+            }
           </div>
         } @else if (photo.videoUrl) {
           <a class="card card--link" [href]="photo.videoUrl" target="_blank" rel="noopener noreferrer">
@@ -37,7 +42,7 @@
 
 <ng-template #media let-photo>
   @if (photo.src) {
-    <app-figure [src]="photo.src" [alt]="photo.alt" [caption]="photo.caption ?? ''" fit="cover" />
+    <app-figure [src]="photo.src" [alt]="photo.alt" [caption]="photo.caption ?? ''" />
   } @else {
     <figure class="pending">
       <div class="pending-frame" role="img" [attr.aria-label]="photo.alt">
