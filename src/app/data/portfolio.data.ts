@@ -65,7 +65,7 @@ export const MILESTONES: readonly Milestone[] = [
             description:
               'Cada integrante escribió sus propuestas en notas adhesivas. Entre ellas estaban esquivar obstáculos con seguimiento del cuerpo, desactivar una bomba o escapar de un hotel con pistas compartidas, detener meteoritos combinando colores con las manos, un blackjack al revés comunicado con gestos y un juego de conducción guiado por señas.',
             image: {
-              src: 'assets/images/brainstorm/lluvia ideas.jpg',
+              src: 'assets/images/brainstorm/lluvia_ideas.jpg',
               alt: 'Captura del tablero de Miro con notas adhesivas amarillas que contienen las ideas de juego de cada integrante del grupo.',
             },
           },
@@ -74,7 +74,7 @@ export const MILESTONES: readonly Milestone[] = [
             description:
               'Ordenamos las propuestas según el tipo de interacción que pedían: acciones concretas, gestos o señas, puzzles y acciones con el Oculus, reconocimiento facial o realidad aumentada, y juegos que requieren un manual. Así pudimos comparar las ideas por la forma de jugar que proponía cada una.',
             image: {
-              src: 'assets/images/brainstorm/agrupacion ideas.jpg',
+              src: 'assets/images/brainstorm/agrupacion_ideas.jpg',
               alt: 'Captura del tablero de Miro con las notas adhesivas ordenadas en filas por categoría: acciones concretas, gestos o señas, puzzle o acciones del Oculus, reconocimiento facial o realidad aumentada, y requiere un manual.',
             },
           },
@@ -83,7 +83,7 @@ export const MILESTONES: readonly Milestone[] = [
             description:
               'Elegimos el juego colaborativo de conducción que propuso David Alejandro Espinoza Barrios: un integrante maneja sin ver la pista y los demás le dan indicaciones con gestos o señas. En el tablero lo acompañamos con una imagen de referencia del concepto, que no corresponde exactamente al juego.',
             image: {
-              src: 'assets/images/brainstorm/eleccion idea.jpg',
+              src: 'assets/images/brainstorm/eleccion_idea.jpg',
               alt: 'Nota adhesiva con la idea elegida, un juego colaborativo de conducción, y debajo una imagen de referencia de un simulador de manejo con indicaciones por gestos.',
             },
           },
