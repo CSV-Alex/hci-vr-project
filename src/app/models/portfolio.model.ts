@@ -106,10 +106,18 @@ export interface HeroContent {
 }
 
 /** Project overview section copy. */
+export interface OverviewVideo {
+  readonly alt: string;
+  readonly caption?: string;
+  readonly embedUrl: string;
+  readonly videoUrl: string;
+}
+
 export interface OverviewContent {
   readonly heading: string;
   readonly paragraphs: readonly string[];
   readonly image?: ImageItem;
+  readonly video?: OverviewVideo;
 }
 
 /** Footer copy: the team members credited at the end of the page. */

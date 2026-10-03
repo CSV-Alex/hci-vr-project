@@ -5,23 +5,6 @@ import {
   OverviewContent,
 } from '../models/portfolio.model';
 
-/**
- * =============================================================================
- * PORTFOLIO CONTENT — this is the only file you need to edit to add material.
- * =============================================================================
- *
- * HOW TO ADD CONTENT
- * ------------------
- * 1. Drop your images into `src/assets/images/<subfolder>/`.
- *    Subfolders: brainstorm/, storyboard/, testing/, game/
- * 2. Reference them as `assets/images/<subfolder>/<file>`.
- * 3. Every image needs a descriptive `alt`; the model enforces that field, so
- *    the build will fail if it is missing.
- *
- * Keep ideation proposals separate from mechanics verified in Roblox Studio.
- */
-
-/** Hero copy. The subtitle is the single line under the title. */
 export const HERO: HeroContent = {
   title: 'Grupo F — Cuidado al Volante',
   subtitle: 'Curso de Interacción Humano-Computadora · 7mo semestre · UNSA',
@@ -34,10 +17,11 @@ export const OVERVIEW: OverviewContent = {
     'En Cuydado al Volante, dos cuyes huyen en un Escarabajo mientras la policía los persigue. Uno conduce y el otro puede ocuparse de los pedales y los cables del auto. Para escapar, tienen que trabajar juntos.',
     'El camino está lleno de tráfico, patrullas y obstáculos. El volante tiene un botón para saltar, y la meta está al final de un túnel. Podemos jugar con visor VR o probar los controles con teclado y ratón; el reto de los cables también acepta toques en pantalla.',
   ],
-  image: {
-    src: 'assets/images/game/volante.jpeg',
-    alt: 'Vista desde la cabina del Escarabajo amarillo en Roblox, con el volante al frente y una calle con casas.',
-    caption: 'Desde el asiento del conductor.',
+  video: {
+    alt: 'Grabación en video de la interfaz completa.',
+    caption: 'Interfaz',
+    embedUrl: 'https://drive.google.com/file/d/1PJMV08_7nsUbYbsIJ9ud-7iFVaWbSlhh/preview',
+    videoUrl: 'https://drive.google.com/file/d/1PJMV08_7nsUbYbsIJ9ud-7iFVaWbSlhh/view',
   },
 };
 

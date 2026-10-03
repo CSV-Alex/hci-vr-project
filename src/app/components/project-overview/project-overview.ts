@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { OVERVIEW } from '../../data/portfolio.data';
 import { FigureComponent } from '../figure/figure';
@@ -12,5 +13,11 @@ import { FigureComponent } from '../figure/figure';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectOverviewComponent {
+  private readonly sanitizer = inject(DomSanitizer);
+
   protected readonly overview = OVERVIEW;
+
+  protected getSafeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 }
